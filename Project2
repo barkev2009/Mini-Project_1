@@ -1,16 +1,33 @@
 import math
 
-# Inviting the user to pick a range from where the program will search for Pythagoras triangles
-tr_range = input('Please, pick a range for the program to '
-                 'search (type in two numbers through a space): ').split(sep=' ')
-start = int(tr_range[0])
-end = int(tr_range[1])
+# The beginning header
+print('''This program invites you to learn about Pythagoras triangles - right-angled triangles, all sides of which
+are INTEGER numbers. The program will find all existing Pythagoras triplets in the range you will choose.\n''')
+
+while True:
+    # Inviting the user to pick a range from where the program will search for Pythagoras triangles
+    tr_range = input('Please, pick a range for the program to '
+                     'search (type in two numbers through a space): ').split(sep=' ')
+    start = int(tr_range[0])
+    end = int(tr_range[1])
+
+    # "Fool-checking"
+    if start > end:
+        start, end = end, start
+
+    if start == 0:
+        start = 1
+
+    if start >= 0 and end >= 0:
+        break
+    else:
+        print('You typed in range incorrectly. Please try again.\n')
 
 # Initializing the Pythagoras search
 tr_list = []
 for a in range(start, end + 1):
     for b in range(start, end + 1):
-        c = math.sqrt(a**2 + b**2)
+        c = math.sqrt(a ** 2 + b ** 2)
         if int(c) == c:
             c = int(c)
             list12 = [a, b]
@@ -21,5 +38,10 @@ for a in range(start, end + 1):
 
 ordered = list(dict.fromkeys(tr_list))
 
-for i in ordered:
-    print(i)
+# Printing out the result
+if not ordered:
+    print('We haven`t found any triangles in the given range.')
+else:
+    print('We`ve found Pythagoras triangles with following side-triplets:')
+    for i in ordered:
+        print(i)
