@@ -6,8 +6,8 @@ print('''"Вояджер-1" был запущен 5 сентября 1977 год
  предполагая, что зонд движется по прямой, с постоянной скоростью.''')
 
 # Setting the velocity
-velocity = 38241  # miles/hour
-lag_vel = 299792458  # meters/sec
+velocity = 38241          # miles/hour
+lag_vel = 299792458       # meters/sec
 
 # Recording the current date
 input_date = input('\nВведите дату в формате дд.мм.гггг: ')
