@@ -1,5 +1,11 @@
 from project3_functions import *
 
+# Header
+print('''Hello! This program invites you to enter the number of dots in 3d space, then it checks the dots and offers
+you to delete the dots which are either identical or close to each other. Be careful to use the soft wisely as it's 
+far from completely ready and designed)
+''')
+
 # Creating the dictionary of dots
 number = int(input('How many dots do you want to enter? '))
 dots = create_dots(number)
