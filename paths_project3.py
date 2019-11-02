@@ -74,8 +74,8 @@ cafes = ['Kuzina',
          'Art-Pub']
 
 control_points = [[-43, 25],  # 0: Intersection of Pirogova and Univer Prospect
-                  [-60, 4],   # 1: Turning point in the forest
-                  [-64, 1],   # 2: Exit off the forest
+                  [-60, 4],  # 1: Turning point in the forest
+                  [-64, 1],  # 2: Exit off the forest
                   [-65, -3],  # 3: Khan-Buz location
                   [-39, 20],  # 4: Midpoint point on Ilyicha St (before Teahuppo)
                   [-39, 19],  # 5: Turning point from Ilyicha to Teahuppo
@@ -84,6 +84,12 @@ control_points = [[-43, 25],  # 0: Intersection of Pirogova and Univer Prospect
                   [-41, 10],  # 8: Teahuppo location
                   [-30, 29],  # 9: Turning point to Co.mein from Univer Porspect
                   [-30, 28],  # 10: Co.mein location
+                  [-27, 4],  # 11: Turning point from Ilyicha to Rybaris
+                  [-30, 3],  # 12: Rybaris location
+                  [-19, -6],  # 13: Turning point from Ilyicha to Vilka-Lozhka
+                  [-21, -8],  # 14: Crossroads to Vilka and Pechki
+                  [-22, -9],  # 15: Vilka-Lozhka location
+                  [-21, -11],  # 16: Pechki-Lavochki location
                   []]
 
 paths = {'Khan-Buz': [control_points[0],
@@ -98,7 +104,23 @@ paths = {'Khan-Buz': [control_points[0],
                       control_points[8]],
          'Co.mein': [control_points[0],
                      control_points[9],
-                     control_points[10]]}
+                     control_points[10]],
+         'Rybaris': [control_points[0],
+                     control_points[4],
+                     control_points[11],
+                     control_points[12]],
+         'Vilka-Lozhka': [control_points[0],
+                          control_points[4],
+                          control_points[11],
+                          control_points[13],
+                          control_points[14],
+                          control_points[15]],
+         'Pechki-Lavochki': [control_points[0],
+                             control_points[4],
+                             control_points[11],
+                             control_points[13],
+                             control_points[14],
+                             control_points[16]]}
 
 
 def visit(name):
