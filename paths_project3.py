@@ -72,15 +72,27 @@ cafes = ['Kuzina',
          'Cinnabon',
          'Co.mein']
 
-control_points = [[-43, 25],  # Intersection of Pirogova and Univer Prospect
-                  [-60, 4],   # Turning point in the forest
-                  [-64, 1],   # Exit off the forest
-                  [-65, -3]]  # Khan-Buz location
+control_points = [[-43, 25],  # 0: Intersection of Pirogova and Univer Prospect
+                  [-60, 4],   # 1: Turning point in the forest
+                  [-64, 1],   # 2: Exit off the forest
+                  [-65, -3],  # 3: Khan-Buz location
+                  [-39, 20],  # 4: Midpoint point on Ilyicha St (before Teahuppo)
+                  [-39, 19],  # 5: Turning point from Ilyicha to Teahuppo
+                  [-43, 11],  # 6: Turning point straight to Teahuppo
+                  [-42, 10],  # 7: Correcting way to Teahuppo
+                  [-41, 10],  # 8: Correcting way to Teahuppo
+                  []]
 
 paths = {'Khan-Buz': [control_points[0],
                       control_points[1],
                       control_points[2],
-                      control_points[3]]}
+                      control_points[3]],
+         'Teahuppo': [control_points[0],
+                      control_points[4],
+                      control_points[5],
+                      control_points[6],
+                      control_points[7],
+                      control_points[8]]}
 
 
 def visit(name):
