@@ -1,4 +1,4 @@
-from project3_functions import *
+from Project3.project3_functions import *
 
 # Header
 print('''Hello! This program invites you to enter the number of dots in 3d space, then it checks the dots and offers
