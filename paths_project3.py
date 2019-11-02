@@ -18,7 +18,7 @@ person.speed(0)
 # Creating list of various places to eat or drink at
 cafes = [# 'Kuzina',
          # 'Puerto',
-         'Coffee Collective',
+         # 'Coffee Collective',
          'Myasoroob',
          # 'Teahuppo',
          'Coffee Academy',
@@ -34,7 +34,7 @@ cafes = [# 'Kuzina',
          # 'Pick-Up Coffee',
          # 'Khan-Buz',
          # 'Uncle Dohner',
-         'Cinnabon',
+         # 'Cinnabon',
          # 'Co.mein',
          'Art-Pub',
          # 'Sparks',
@@ -69,7 +69,11 @@ control_points = [[-43, 25],    # 0: Intersection of Pirogova and Univer Prospec
                   [-4, -35],    # 26: Turning point from Morskoy to Kuzina
                   [-5, -34],    # 27: Kuzina and Puerto location
                   [-15, -43.5], # 28: Turning point from Morskoy to Clever
-                  [-16, -42],
+                  [-16, -42],   # 29: Clever location
+                  [32, -7],     # 30: Turning point from Morskoy to Coffee Collective
+                  [31, -6],     # 31: Coffee Collective location
+                  [42, 0],      # 32: Turning point from Morskoy to Cinnabon
+                  [41, 1],      # 33: Cinnabon location
                   []]
 
 paths = {'Khan-Buz': [0, 1, 2, 3],
@@ -86,7 +90,9 @@ paths = {'Khan-Buz': [0, 1, 2, 3],
          'Shurubor': [0, 11, 23, 24],
          'Kuzina': [0, 25, 26, 27],
          'Puerto': [0, 25, 26, 27],
-         'Clever': [0, 25, 28, 29]}
+         'Clever': [0, 25, 28, 29],
+         'Coffee Collective': [0, 25, 30, 31],
+         'Cinnabon': [0, 25, 32, 33]}
 
 
 def visit(name):
