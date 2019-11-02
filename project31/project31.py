@@ -1,33 +1,11 @@
 from turtle import *
+from pr3_paths import*
 
 screen = Screen()
-person = Turtle()
-person.shape('circle')
-person.shapesize(1)
-person.color('red')
-person.speed(0)
-
-cafes = ['Kuzina',
-         'Puerto',
-         'Coffee Collective',
-         'Myasoroob',
-         'Teahuppo',
-         'Coffee Academy',
-         'Spot&Choose'
-         'RybaRis',
-         'Kotocafe',
-         'Clever',
-         'Dudnik',
-         'Fabrika Pizza',
-         'Vilka-Lozhka',
-         'Pechki-Lavochki',
-         'Shurubor',
-         'Pick-Up Coffee']
-
 screen.bgpic('Map.png')
 screen_width = 1400
 screen_height = 920
-sq_size = 20
+sq_size = 10
 screen.screensize(screen_width, screen_height)
 
 
@@ -67,7 +45,8 @@ def grid():
 # grid()
 
 person.penup()
-person.goto(-23*sq_size, 13*sq_size)
+person.goto(-46*sq_size, 26*sq_size)
 place = textinput('Программа покажет маршрут до кафе, в которое Вы хотите пойти', 'Какое кафе предпочитаете?')
+
 
 done()
