@@ -8,41 +8,6 @@ screen_height = 920
 sq_size = 10
 screen.screensize(screen_width, screen_height)
 
-
-# Creating function to draw grid
-def grid():
-    grid1 = Turtle()
-    grid1.speed(0)
-    grid1.penup()
-    grid1.goto(-screen_width / 2, -screen_height / 2)
-    grid1.pendown()
-
-    for i in range(int(screen_height / sq_size)):
-        grid1.forward(screen_width)
-        grid1.left(90)
-        grid1.forward(sq_size)
-        grid1.left(90)
-        grid1.forward(screen_width)
-        grid1.right(90)
-        grid1.forward(sq_size)
-        grid1.right(90)
-
-    grid1.penup()
-    grid1.setheading(-90)
-    grid1.goto(-screen_width / 2, screen_height / 2)
-    grid1.pendown()
-
-    for i in range(int(screen_width / sq_size)):
-        grid1.forward(screen_height)
-        grid1.left(90)
-        grid1.forward(sq_size)
-        grid1.left(90)
-        grid1.forward(screen_height)
-        grid1.right(90)
-        grid1.forward(sq_size)
-        grid1.right(90)
-
-
 # Creating person
 person = Turtle()
 person.shape('circle')
@@ -55,22 +20,22 @@ cafes = ['Kuzina',
          'Puerto',
          'Coffee Collective',
          'Myasoroob',
-         'Teahuppo',
+         # 'Teahuppo',
          'Coffee Academy',
          'Spot&Choose'
-         'RybaRis',
+         # 'RybaRis',
          'Kotocafe',
          'Clever',
          'Dudnik',
          'Fabrika Pizza',
-         'Vilka-Lozhka',
-         'Pechki-Lavochki',
+         # 'Vilka-Lozhka',
+         # 'Pechki-Lavochki',
          'Shurubor',
          'Pick-Up Coffee',
-         'Khan-Buz',
-         'Uncle Dohner',
+         # 'Khan-Buz',
+         # 'Uncle Dohner',
          'Cinnabon',
-         'Co.mein',
+         # 'Co.mein',
          'Art-Pub']
 
 control_points = [[-43, 25],  # 0: Intersection of Pirogova and Univer Prospect
@@ -90,39 +55,19 @@ control_points = [[-43, 25],  # 0: Intersection of Pirogova and Univer Prospect
                   [-21, -8],  # 14: Crossroads to Vilka and Pechki
                   [-22, -9],  # 15: Vilka-Lozhka location
                   [-21, -11],  # 16: Pechki-Lavochki location
+                  [-64, -4],  # 17: Uncle Dohner location
                   []]
 
-paths = {'Khan-Buz': [control_points[0],
-                      control_points[1],
-                      control_points[2],
-                      control_points[3]],
-         'Teahuppo': [control_points[0],
-                      control_points[4],
-                      control_points[5],
-                      control_points[6],
-                      control_points[7],
-                      control_points[8]],
-         'Co.mein': [control_points[0],
-                     control_points[9],
-                     control_points[10]],
-         'Rybaris': [control_points[0],
-                     control_points[4],
-                     control_points[11],
-                     control_points[12]],
-         'Vilka-Lozhka': [control_points[0],
-                          control_points[4],
-                          control_points[11],
-                          control_points[13],
-                          control_points[14],
-                          control_points[15]],
-         'Pechki-Lavochki': [control_points[0],
-                             control_points[4],
-                             control_points[11],
-                             control_points[13],
-                             control_points[14],
-                             control_points[16]]}
+paths = {'Khan-Buz': [0, 1, 2, 3],
+         'Uncle Dohner': [0, 1, 2, 3, 17],
+         'Teahuppo': [0, 4, 5, 6, 7, 8],
+         'Spot&Choose': [0, 4, 5, 6, 7, 8],
+         'Co.mein': [0, 9, 10],
+         'Rybaris': [0, 11, 12],
+         'Vilka-Lozhka': [0, 11, 13, 14, 15],
+         'Pechki-Lavochki': [0, 11, 13, 14, 16]}
 
 
 def visit(name):
     for i in paths[name]:
-        person.goto(sq_size * i[0], sq_size * i[1])
+        person.goto(sq_size * control_points[i][0], sq_size * control_points[i][1])
