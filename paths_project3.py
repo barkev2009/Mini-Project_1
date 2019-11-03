@@ -89,17 +89,21 @@ paths = {'Khan-Buz': [0, 1, 2, 3],
 
 def visit(name):
     if name in list_cafes:
-        if name != 'Art-Pub' and name != 'Kotocafe':
-            for i in paths[name]:
-                person.goto(sq_size * control_points[i][0], sq_size * control_points[i][1])
+        if name in paths.keys():
+            if name != 'Art-Pub' and name != 'Kotocafe':
+                for i in paths[name]:
+                    person.goto(sq_size * control_points[i][0], sq_size * control_points[i][1])
+            else:
+                if name == 'Art-Pub':
+                    person.goto(sq_size * control_points[0][0], sq_size * control_points[0][1])
+                    person.goto(sq_size * control_points[38][0], sq_size * control_points[38][1])
+                    person.circle(-15, 70)
+                    person.goto(sq_size * control_points[39][0], sq_size * control_points[39][1])
         else:
-            if name == 'Art-Pub':
-                person.goto(sq_size * control_points[0][0], sq_size * control_points[0][1])
-                person.goto(sq_size * control_points[38][0], sq_size * control_points[38][1])
-                person.circle(-15, 70)
-                person.goto(sq_size * control_points[39][0], sq_size * control_points[39][1])
+            person.write('We didn`t draw the path yet or there`s no such cafe in Academ')
     else:
-        answer = screen.textinput('Oops, we didn`t find', 'Would you like us to consider the path later? ')
+        answer = screen.textinput('Oops, we didn`t find the cafe you`ve entered!',
+                                  'Would you like us to consider the path later? ')
         if answer == 'yes':
             list_cafes.append(name)
 
