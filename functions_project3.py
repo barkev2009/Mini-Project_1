@@ -9,6 +9,7 @@ screen_width = 1400
 screen_height = 920
 sq_size = 10
 screen.screensize(screen_width, screen_height)
+screen.setup(width=1.0, height=1.0)
 
 # Creating person
 person = Turtle()
@@ -33,6 +34,7 @@ def c(radius, angle):
 def visit(name):
     if name in list_cafes:
         if name in paths.keys():
+            person.speed(1)
             circ = 0
             for i in paths[name]:
                 if i != 'c':
@@ -40,12 +42,24 @@ def visit(name):
                 else:
                     c(circles[circ][0], circles[circ][1])
                     circ += 1
+            person.color('green')
+            person.stamp()
+            person.penup()
+            person.hideturtle()
+            person.setheading(90)
+            person.fd(10)
+            person.color('blue')
+            if name.lower() != 'khan-buz':
+                person.write('There`s the eating spot you wanted to go to!', align='center', font=('Arial', 14))
+            else:
+                person.write('There`s the eating spot you wanted to go to!', font=('Arial', 14))
         else:
-            person.write('We didn`t draw the path yet or there`s no such cafe in Academ')
+            person.write('We didn`t draw the path yet or there`s no such cafe in Academ', font=('Arial', 16))
+        done()
     else:
         answer = screen.textinput('Oops, we didn`t find the cafe you`ve entered!',
                                   'Would you like us to consider the path later? ')
-        if answer == 'yes':
+        if answer.lower() == 'yes':
             list_cafes.append(name)
 
     # Recording the new list to csv

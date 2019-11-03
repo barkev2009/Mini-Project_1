@@ -40,31 +40,40 @@ control_points = [[-43, 25],     # 0: Intersection of Pirogova and Univer Prospe
                   [-22, 31.5],   # 38: Point before turning to Art-Pub
                   [-15.5, 24],   # 39: Second point before turn to
                   [7, 20],       # 40: Turning point just before the Pub
-                  [16, 20]]      # 41: Art-Pub location
+                  [16, 20],      # 41: Art-Pub location
+                  [15, 20],      # 42: First turn from Pub to Murchim
+                  [18, 27],      # 43: Away from Pub to Murchim
+                  [35.5, 34],    # 44: The point before large circle to Murchim
+                  [45, 30],      # 45: Last turn before Murchim
+                  [48, 29]]      # 46: Murchim location
 
 # Dictionary of routes based on control points
-paths = {'Khan-Buz': [0, 1, 2, 3],
-         'Uncle Dohner': [0, 1, 2, 3, 17],
-         'Teahuppo': [0, 4, 5, 6, 7, 8],
-         'Spot&Choose': [0, 4, 5, 6, 7, 18],
-         'Co.mein': [0, 9, 10],
-         'Rybaris': [0, 11, 12],
-         'Vilka-Lozhka': [0, 11, 13, 14, 15],
-         'Pechki-Lavochki': [0, 11, 13, 14, 16],
-         'Sparks': [0, 4, 19, 20],
-         'Fabrika Pizza': [0, 4, 19, 20, 21, 22],
-         'Pick-Up Coffee': [0, 4, 19, 20, 21, 22],
-         'Shurubor': [0, 11, 23, 24],
-         'Kuzina': [0, 25, 26, 27],
-         'Puerto': [0, 25, 26, 27],
-         'Clever': [0, 25, 28, 29],
-         'Coffee Collective': [0, 25, 30, 31],
-         'Cinnabon': [0, 25, 32, 33],
-         'Dudnik': [0, 25, 34, 35],
-         'Myasoroob': [0, 25, 36, 37],
-         'Coffee Academy': [0, 25, 36, 37],
-         'Art-Pub': [0, 38, 'c', 39, 'c', 40, 41],
-         'Murchim': []}
+paths = {'khan-buz': [0, 1, 2, 3],
+         'uncle dohner': [0, 1, 2, 3, 17],
+         'teahuppo': [0, 4, 5, 6, 7, 8],
+         "spot&choo's": [0, 4, 5, 6, 7, 18],
+         'co.mein': [0, 9, 10],
+         'rybaris': [0, 11, 12],
+         'vilka-lozhka': [0, 11, 13, 14, 15],
+         'pechki-lavochki': [0, 11, 13, 14, 16],
+         'sparks': [0, 4, 19, 20],
+         'fabrika pizza': [0, 4, 19, 20, 21, 22],
+         'pick-up coffee': [0, 4, 19, 20, 21, 22],
+         'shurubor': [0, 11, 23, 24],
+         'kuzina': [0, 25, 26, 27],
+         'puerto': [0, 25, 26, 27],
+         'clever': [0, 25, 28, 29],
+         'coffee collective': [0, 25, 30, 31],
+         'cinnabon': [0, 25, 32, 33],
+         'dudnik': [0, 25, 34, 35],
+         'myasoroob': [0, 25, 36, 37],
+         'coffeea academy': [0, 25, 36, 37],
+         'art-pub': [0, 38, 'c', 39, 'c', 40, 41],
+         'murchim': [0, 38, 'c', 39, 'c', 40, 42, 'c', 'c', 43, 'c', 44, 'c', 45, 46]}
 
 circles = [[-15, 70],
-           [15, 60]]
+           [15, 60],
+           [1, 35],
+           [53, 60],
+           [-15, 60],
+           [-45, 60]]
