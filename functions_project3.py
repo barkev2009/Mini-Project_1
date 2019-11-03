@@ -31,7 +31,7 @@ def c(radius, angle):
 
 
 # Main function for drawing the route
-def visit(name):
+def visit(name, rand=None):
     if name in list_cafes:
         if name in paths.keys():
             person.speed(1)
@@ -49,12 +49,24 @@ def visit(name):
             person.setheading(90)
             person.fd(10)
             person.color('blue')
-            if name.lower() == 'khan-buz':
-                person.write('There`s the eating spot you wanted to go to!', font=('Arial', 14))
+            if name.lower() == 'khan-buz' or name.lower() == 'uncle dohner':
+                if rand:
+                    person.write('There`s the eating spot we`ve come up with: {}'.format(name.title()),
+                                 font=('Arial', 14))
+                else:
+                    person.write('There`s the eating spot you wanted to go to!', font=('Arial', 14))
             elif name.lower() == 'murchim' or name.lower() == 'myasoroob' or name.lower() == 'coffee academy':
-                person.write('There`s the eating spot you wanted to go to!', align='right', font=('Arial', 14))
+                if rand:
+                    person.write('There`s the eating spot we`ve come up with: {}'.format(name.title()),
+                                 align='right', font=('Arial', 14))
+                else:
+                    person.write('There`s the eating spot you wanted to go to!', align='right', font=('Arial', 14))
             else:
-                person.write('There`s the eating spot you wanted to go to!', align='center', font=('Arial', 14))
+                if rand:
+                    person.write('There`s the eating spot we`ve come up with: {}'.format(name.title()), align='center',
+                                 font=('Arial', 14))
+                else:
+                    person.write('There`s the eating spot you wanted to go to!', align='center', font=('Arial', 14))
         else:
             person.write('We didn`t draw the path yet or there`s no such cafe in Academ', font=('Arial', 16))
         done()
