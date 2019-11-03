@@ -49,15 +49,17 @@ def visit(name):
             person.setheading(90)
             person.fd(10)
             person.color('blue')
-            if name.lower() != 'khan-buz':
-                person.write('There`s the eating spot you wanted to go to!', align='center', font=('Arial', 14))
-            else:
+            if name.lower() == 'khan-buz':
                 person.write('There`s the eating spot you wanted to go to!', font=('Arial', 14))
+            elif name.lower() == 'murchim' or name.lower() == 'myasoroob' or name.lower() == 'coffee academy':
+                person.write('There`s the eating spot you wanted to go to!', align='right', font=('Arial', 14))
+            else:
+                person.write('There`s the eating spot you wanted to go to!', align='center', font=('Arial', 14))
         else:
             person.write('We didn`t draw the path yet or there`s no such cafe in Academ', font=('Arial', 16))
         done()
     else:
-        answer = screen.textinput('Oops, we didn`t find the cafe you`ve entered!',
+        answer = screen.textinput('Oops, we didn`t find the cafe!',
                                   'Would you like us to consider the path later? ')
         if answer.lower() == 'yes':
             list_cafes.append(name)

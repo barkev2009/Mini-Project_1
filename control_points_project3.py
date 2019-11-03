@@ -67,7 +67,7 @@ paths = {'khan-buz': [0, 1, 2, 3],
          'cinnabon': [0, 25, 32, 33],
          'dudnik': [0, 25, 34, 35],
          'myasoroob': [0, 25, 36, 37],
-         'coffeea academy': [0, 25, 36, 37],
+         'coffee academy': [0, 25, 36, 37],
          'art-pub': [0, 38, 'c', 39, 'c', 40, 41],
          'murchim': [0, 38, 'c', 39, 'c', 40, 42, 'c', 'c', 43, 'c', 44, 'c', 45, 46]}
 
