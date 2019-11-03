@@ -1,28 +1,4 @@
-from turtle import *
-import pandas as pd
-
-# Creating screen class
-screen = Screen()
-screen.bgpic('Map.png')
-screen_width = 1400
-screen_height = 920
-sq_size = 10
-screen.screensize(screen_width, screen_height)
-
-# Creating person
-person = Turtle()
-person.shape('circle')
-person.pensize(3)
-person.color('red')
-person.speed(0)
-
-# Creating list of various places to eat or drink at
-cafes = pd.read_csv('cafes.csv', header=None)
-list_cafes = []
-for k in cafes[0]:
-    list_cafes.append(k)
-
-
+# Control points for making routes
 control_points = [[-43, 25],     # 0: Intersection of Pirogova and Univer Prospect
                   [-60, 4],      # 1: Turning point in the forest
                   [-64, 1],      # 2: Exit off the forest
@@ -61,10 +37,12 @@ control_points = [[-43, 25],     # 0: Intersection of Pirogova and Univer Prospe
                   [45, 4],       # 35: Dudnik location
                   [54, 10],      # 36: Turning point from MOrskoy to Myasoroob
                   [53, 11],      # 37: Myasoroob and Coffee Academy location
-                  [-22, 31.5],
-                  [-15.5, 24],
-                  []]
+                  [-22, 31.5],   # 38: Point before turning to Art-Pub
+                  [-15.5, 24],   # 39: Second point before turn to
+                  [7, 20],       # 40: Turning point just before the Pub
+                  [16, 20]]      # 41: Art-Pub location
 
+# Dictionary of routes based on control points
 paths = {'Khan-Buz': [0, 1, 2, 3],
          'Uncle Dohner': [0, 1, 2, 3, 17],
          'Teahuppo': [0, 4, 5, 6, 7, 8],
@@ -84,30 +62,9 @@ paths = {'Khan-Buz': [0, 1, 2, 3],
          'Cinnabon': [0, 25, 32, 33],
          'Dudnik': [0, 25, 34, 35],
          'Myasoroob': [0, 25, 36, 37],
-         'Coffee Academy': [0, 25, 36, 37]}
+         'Coffee Academy': [0, 25, 36, 37],
+         'Art-Pub': [0, 38, 'c', 39, 'c', 40, 41],
+         'Murchim': []}
 
-
-def visit(name):
-    if name in list_cafes:
-        if name in paths.keys():
-            if name != 'Art-Pub' and name != 'Kotocafe':
-                for i in paths[name]:
-                    person.goto(sq_size * control_points[i][0], sq_size * control_points[i][1])
-            else:
-                if name == 'Art-Pub':
-                    person.goto(sq_size * control_points[0][0], sq_size * control_points[0][1])
-                    person.goto(sq_size * control_points[38][0], sq_size * control_points[38][1])
-                    person.circle(-15, 70)
-                    person.goto(sq_size * control_points[39][0], sq_size * control_points[39][1])
-        else:
-            person.write('We didn`t draw the path yet or there`s no such cafe in Academ')
-    else:
-        answer = screen.textinput('Oops, we didn`t find the cafe you`ve entered!',
-                                  'Would you like us to consider the path later? ')
-        if answer == 'yes':
-            list_cafes.append(name)
-
-    # Recording the new list to csv
-    with open('cafes.csv', 'w') as file:
-        for i in list_cafes:
-            file.write(i + '\n')
+circles = [[-15, 70],
+           [15, 60]]
