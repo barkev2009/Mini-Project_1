@@ -69,7 +69,6 @@ def visit(name, rand=None):
                     person.write('There`s the eating spot you wanted to go to!', align='center', font=('Arial', 14))
         else:
             person.write('We didn`t draw the path yet or there`s no such cafe in Academ', font=('Arial', 16))
-        done()
     else:
         answer = screen.textinput('Oops, we didn`t find the cafe!',
                                   'Would you like us to consider the path later? ')
