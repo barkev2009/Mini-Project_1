@@ -63,7 +63,7 @@ def visit(name, rand=None):
                     person.write('There`s the eating spot you wanted to go to!', align='right', font=('Arial', 14))
             else:
                 if rand:
-                    person.write('There`s the eating spot we`ve come up with: {}'.format(name.title()), align='center',
+                    person.write('That`s the eating spot we`ve come up with: {}'.format(name.title()), align='center',
                                  font=('Arial', 14))
                 else:
                     person.write('There`s the eating spot you wanted to go to!', align='center', font=('Arial', 14))
