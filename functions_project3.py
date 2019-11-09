@@ -51,22 +51,22 @@ def visit(name, rand=None):
             person.color('blue')
             if name.lower() == 'khan-buz' or name.lower() == 'uncle dohner':
                 if rand:
-                    person.write('There`s the eating spot we`ve come up with: {}'.format(name.title()),
+                    person.write('That\'s our option: {}'.format(name.title()),
                                  font=('Arial', 14))
                 else:
-                    person.write('There`s the eating spot you wanted to go to!', font=('Arial', 14))
+                    person.write('There\'s your spot!', font=('Arial', 14))
             elif name.lower() == 'murchim' or name.lower() == 'myasoroob' or name.lower() == 'coffee academy':
                 if rand:
-                    person.write('There`s the eating spot we`ve come up with: {}'.format(name.title()),
+                    person.write('That\'s our option: {}'.format(name.title()),
                                  align='right', font=('Arial', 14))
                 else:
-                    person.write('There`s the eating spot you wanted to go to!', align='right', font=('Arial', 14))
+                    person.write('There\'s your spot!', align='right', font=('Arial', 14))
             else:
                 if rand:
-                    person.write('That`s the eating spot we`ve come up with: {}'.format(name.title()), align='center',
+                    person.write('That\'s our option: {}'.format(name.title()), align='center',
                                  font=('Arial', 14))
                 else:
-                    person.write('There`s the eating spot you wanted to go to!', align='center', font=('Arial', 14))
+                    person.write('There\'s your spot!', align='center', font=('Arial', 14))
         else:
             person.write('We didn`t draw the path yet or there`s no such cafe in Academ', font=('Arial', 16))
     else:
