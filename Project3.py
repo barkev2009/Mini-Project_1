@@ -1,7 +1,8 @@
 from functions_project3 import *
 from random import randint
 
-while True:
+inf = 'yes'
+while inf.lower() != 'no':
     # Creating person
     person.reset()
     person.shape('circle')
@@ -22,7 +23,3 @@ while True:
         visit(list_cafes[name], True)
 
     inf = screen.textinput('Would you like to choose another route?', 'Once again?')
-    if inf.lower() == 'yes':
-        continue
-    else:
-        break
