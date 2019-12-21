@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup, SoupStrainer
 from urllib.request import urlopen
-import sys
 
 tables = SoupStrainer('table', {'class': 'model-short-block'})
 only1 = SoupStrainer('table', {'class': 'conf-table'})
