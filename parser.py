@@ -1,9 +1,6 @@
-from bs4 import BeautifulSoup, SoupStrainer
+from bs4 import BeautifulSoup
 from urllib.request import urlopen
 
-tables = SoupStrainer('table', {'class': 'model-short-block'})
-only1 = SoupStrainer('table', {'class': 'conf-table'})
-only_01 = SoupStrainer('div', {'itemprop': 'offers'})
 model_list = []
 k = 0
 for i in range(43):
